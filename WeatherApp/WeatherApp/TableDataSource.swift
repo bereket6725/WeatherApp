@@ -11,7 +11,7 @@ import UIKit
 
 
 class TableDataSource: NSObject, UITableViewDataSource {
-    var weatherArray :[WeatherObject]?
+    var weatherArray:[WeatherObject]?
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -21,12 +21,12 @@ class TableDataSource: NSObject, UITableViewDataSource {
             return weatherArray.count
         }
        else{
-            return 1
+           return (weatherArray?.count)!
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "WeatherTableViewCell") as? WeatherTableViewCell{
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "weatherCell") as? WeatherTableViewCell{
             cell.dateLabel.text   = "Test"
             cell.morningLabel.text = "Morning"
             cell.dayLabel.text = "day"
@@ -34,6 +34,7 @@ class TableDataSource: NSObject, UITableViewDataSource {
             cell.mainLabel.text = "main"
             cell.nightLabel.text = "night"
             cell.speedLabel.text = "speed"
+            
             return cell
         }
         else{
@@ -42,6 +43,10 @@ class TableDataSource: NSObject, UITableViewDataSource {
         }
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    {
+        return 100.0//Choose your custom row height
+    }
 //    func catchNotification(notification:Notification) -> Void {
 //        print("Catch notification")
 //        guard let userInfo = notification.userInfo,

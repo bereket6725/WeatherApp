@@ -12,7 +12,7 @@ import UIKit
 class TableViewController: UIViewController, UITableViewDelegate {
     
     var tableView: UITableView!
-    var dataSource: UITableViewDataSource!
+    var dataSource: TableDataSource!
     //var weatherArray: [WeatherObject] = []
     
     override func viewDidLoad() {
@@ -35,6 +35,7 @@ class TableViewController: UIViewController, UITableViewDelegate {
         callWeatherAPI(){ parsedArray in
             print("\(parsedArray)\n")
             print("all good")
+            self.dataSource.weatherArray = parsedArray  
            // self.sendOverWeatherObjectArray(weatherArray: parsedArray)
             DispatchQueue.main.async{
                 self.tableView.reloadData()
