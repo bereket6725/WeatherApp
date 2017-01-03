@@ -25,8 +25,6 @@ class ViewController: UIViewController {
     }
     
     
-    
-    
     func callWeatherAPI(completion:@escaping ([WeatherObject])->Void){
         WeatherAPIManager.makeAPICall(completion: completion)
     }

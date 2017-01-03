@@ -10,6 +10,5 @@ import Foundation
 
 
 protocol parserProtocol {
-    
     static func serializeAndParseJSON<T>(data: Data, completion: @escaping (_ parsedArray: [T])->Void)
 }

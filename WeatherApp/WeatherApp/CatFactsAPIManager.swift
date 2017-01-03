@@ -25,7 +25,10 @@ class CatFactsAPIManager:APIManagerProtocol{
                 print("\(error?.localizedDescription)")
                 return
             }
-            CatFactsSerializerAndParser.serializeAndParseJSON(data: data!){ catFactsArray in
+//            CatFactsSerializerAndParser.serializeAndParseJSON(data: data!){ catFactsArray in
+//                completion(catFactsArray)
+//            }
+            APIManagerParserCoordinator.connectToParser(ID: (data!, parserID)){ catFactsArray in
                 completion(catFactsArray)
             }
             
