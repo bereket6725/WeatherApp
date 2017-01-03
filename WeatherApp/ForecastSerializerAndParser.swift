@@ -8,11 +8,11 @@
 
 import Foundation
 
-class ForecastSerializerAndParser {
+class ForecastSerializerAndParser:parserProtocol {
     typealias JSONStandard = [String:AnyObject]
-
-   static func serializeAndParseJSON(data: Data, completion: @escaping (_ fiveDayForecast: [WeatherObject])->Void){
-        var fiveDayForecast: [WeatherObject] = []
+    
+   static func serializeAndParseJSON<T>(data: Data, completion: @escaping (_ parsedArray: [T])->Void){
+        var parsedArray: [T] = []
         
         do{
             let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as! JSONStandard
@@ -38,7 +38,7 @@ class ForecastSerializerAndParser {
                                     if let mainWeather = (weather[0] as! NSDictionary).object(forKey: "main") as? String {
                                         // print("\(mainWeather)")
                                         let weatherObj = WeatherObject(dt: weatherDate, min: tempDict.object(forKey: "min") as! Int, max: tempDict.object(forKey: "max") as! Int, morn: tempDict.object(forKey: "morn") as! Int, day: tempDict.object(forKey: "day") as! Int, night: tempDict.object(forKey: "night") as! Int, speed: speed, Humidity: humidity, main: mainWeather)
-                                        fiveDayForecast.append(weatherObj)
+                                        parsedArray.append(weatherObj as! T)
                                     }
                                 }
                             }
@@ -49,7 +49,7 @@ class ForecastSerializerAndParser {
                 
             }
             //print("\(fiveDayForecast)")
-            completion(fiveDayForecast)
+            completion(parsedArray)
         }
         catch{
             return

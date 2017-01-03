@@ -9,9 +9,9 @@
 import Foundation
 
 
-class CatFactsAPIManager    {
+class CatFactsAPIManager:APIManagerProtocol{
     
-   static func makeAPICall(completion: @escaping (([String])->Void)){
+   static func makeAPICall<T>(completion: @escaping (([T])->Void)){
         let parserID: ParserID = .CatFacts
         let urlString = Constants.CatFactsAPI.url
         guard let url = URL(string: urlString) else {

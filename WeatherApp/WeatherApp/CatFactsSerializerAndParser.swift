@@ -9,10 +9,10 @@
 import Foundation
 
 
-class CatFactsSerializerAndParser{
+class CatFactsSerializerAndParser: parserProtocol{
     typealias JSONStandard = [String:AnyObject]
 
-    static func serializeAndParseJSON(data: Data, completion:@escaping (([String])->Void)){
+    static func serializeAndParseJSON<T>(data: Data, completion:@escaping (([T])->Void)){
         
         do{
             let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as! JSONStandard
@@ -20,9 +20,9 @@ class CatFactsSerializerAndParser{
                 print("issues getting JSON from cat data")
                 return
             }
-            if let catFactsArray = json["facts"] as? NSArray{
+            if let parsedArray = json["facts"] as? NSArray{
                 //print("\(catFactsArray)")
-                completion(catFactsArray as! [String])
+                completion(parsedArray as! [T])
             }
          }
         catch{

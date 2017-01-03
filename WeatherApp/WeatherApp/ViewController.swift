@@ -13,10 +13,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-//        callWeatherAPI(){ fiveDayForecast in
-//            print("\(fiveDayForecast)\n")
-//            print("all good")
-//        }
+        callWeatherAPI(){ parsedArray in
+            print("\(parsedArray)\n")
+            print("all good")
+        }
         callCatFactsAPI(){ catFactsArray in
             print("\(catFactsArray)")
             print("all good ")

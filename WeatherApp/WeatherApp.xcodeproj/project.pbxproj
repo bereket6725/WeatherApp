@@ -20,6 +20,8 @@
 		E312767C1E0F064B0077E52D /* WeatherTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E312767A1E0F064B0077E52D /* WeatherTableViewCell.xib */; };
 		E32D8CFC1E1B2D75008728DB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32D8CFB1E1B2D75008728DB /* Constants.swift */; };
 		E32D8CFE1E1B3909008728DB /* CatFactsSerializerAndParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32D8CFD1E1B3909008728DB /* CatFactsSerializerAndParser.swift */; };
+		E32D8D001E1B4A8D008728DB /* APIManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32D8CFF1E1B4A8D008728DB /* APIManagerProtocol.swift */; };
+		E32D8D021E1B4D11008728DB /* ParserProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32D8D011E1B4D11008728DB /* ParserProtocol.swift */; };
 		E33BF9031E1ADCAF00F883BE /* CatFactsAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33BF9021E1ADCAF00F883BE /* CatFactsAPIManager.swift */; };
 		E37CBCFC1E16F23C0081EE83 /* ForecastSerializerAndParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37CBCFB1E16F23C0081EE83 /* ForecastSerializerAndParser.swift */; };
 		E37CBCFE1E170BC00081EE83 /* ParserID.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37CBCFD1E170BC00081EE83 /* ParserID.swift */; };
@@ -62,6 +64,8 @@
 		E312767A1E0F064B0077E52D /* WeatherTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeatherTableViewCell.xib; sourceTree = "<group>"; };
 		E32D8CFB1E1B2D75008728DB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E32D8CFD1E1B3909008728DB /* CatFactsSerializerAndParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatFactsSerializerAndParser.swift; sourceTree = "<group>"; };
+		E32D8CFF1E1B4A8D008728DB /* APIManagerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManagerProtocol.swift; sourceTree = "<group>"; };
+		E32D8D011E1B4D11008728DB /* ParserProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserProtocol.swift; sourceTree = "<group>"; };
 		E33BF9021E1ADCAF00F883BE /* CatFactsAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatFactsAPIManager.swift; sourceTree = "<group>"; };
 		E37CBCFB1E16F23C0081EE83 /* ForecastSerializerAndParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ForecastSerializerAndParser.swift; path = ../ForecastSerializerAndParser.swift; sourceTree = "<group>"; };
 		E37CBCFD1E170BC00081EE83 /* ParserID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserID.swift; sourceTree = "<group>"; };
@@ -117,6 +121,8 @@
 			children = (
 				E31276421E0F05530077E52D /* AppDelegate.swift */,
 				E32D8CFB1E1B2D75008728DB /* Constants.swift */,
+				E32D8CFF1E1B4A8D008728DB /* APIManagerProtocol.swift */,
+				E32D8D011E1B4D11008728DB /* ParserProtocol.swift */,
 				E31276761E0F05CB0077E52D /* Model */,
 				E31276771E0F05F80077E52D /* Controller */,
 				E312767D1E0F06530077E52D /* View */,
@@ -329,9 +335,11 @@
 			files = (
 				E312767B1E0F064B0077E52D /* WeatherTableViewCell.swift in Sources */,
 				E33BF9031E1ADCAF00F883BE /* CatFactsAPIManager.swift in Sources */,
+				E32D8D021E1B4D11008728DB /* ParserProtocol.swift in Sources */,
 				E31276711E0F05910077E52D /* WeatherAPIManager .swift in Sources */,
 				E31276451E0F05530077E52D /* ViewController.swift in Sources */,
 				E37CBCFE1E170BC00081EE83 /* ParserID.swift in Sources */,
+				E32D8D001E1B4A8D008728DB /* APIManagerProtocol.swift in Sources */,
 				E37CBCFC1E16F23C0081EE83 /* ForecastSerializerAndParser.swift in Sources */,
 				E31276431E0F05530077E52D /* AppDelegate.swift in Sources */,
 				E31276751E0F05BB0077E52D /* WeatherObject.swift in Sources */,
