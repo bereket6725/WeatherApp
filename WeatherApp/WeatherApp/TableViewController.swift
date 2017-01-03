@@ -10,10 +10,10 @@ import Foundation
 import UIKit
 
 class TableViewController: UIViewController, UITableViewDelegate {
-
+    
     var tableView: UITableView!
     var dataSource: UITableViewDataSource!
-    var weatherArray: [WeatherObject]?
+    //var weatherArray: [WeatherObject] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,31 +21,41 @@ class TableViewController: UIViewController, UITableViewDelegate {
         //tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellID")
         tableView.register(UINib(nibName:"WeatherTableViewCell", bundle: nil), forCellReuseIdentifier: "weatherCell")
         view.addSubview(tableView)
-        
         dataSource = TableDataSource()
         tableView.dataSource = dataSource
         tableView.reloadData()
         
         
         makeNetworkRequests()
-
-
+        
+        
     }
     
     func makeNetworkRequests(){
         callWeatherAPI(){ parsedArray in
             print("\(parsedArray)\n")
             print("all good")
+           // self.sendOverWeatherObjectArray(weatherArray: parsedArray)
             DispatchQueue.main.async{
-            self.tableView.reloadData()
+                self.tableView.reloadData()
+                
             }
+            
         }
-//        callCatFactsAPI(){ catFactsArray in
-//            print("\(catFactsArray)")
-//            print("all good ")
-//        }
-
     }
+//    func sendOverWeatherObjectArray(weatherArray: [WeatherObject]){
+//        let nc = NotificationCenter.default
+//        nc.post(name: Notification.Name(rawValue: "WeatherArray"),
+//                object:nil, queue: nil, using:dataSource.catchNotification,  userInfo: ["five day forecast":weatherArray])
+//    }
+    
+    
+    
+    //        callCatFactsAPI(){ catFactsArray in
+    //            print("\(catFactsArray)")
+    //            print("all good ")
+    //        }
+    
     
     
     func showErrorMessage(){
@@ -67,10 +77,10 @@ class TableViewController: UIViewController, UITableViewDelegate {
         
     }
     
-
+    
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     }
-
-   }
+    
+}

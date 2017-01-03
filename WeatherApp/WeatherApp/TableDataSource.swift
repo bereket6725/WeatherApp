@@ -11,13 +11,18 @@ import UIKit
 
 
 class TableDataSource: NSObject, UITableViewDataSource {
-    var WeatherArray: [WeatherObject]?
+    var weatherArray :[WeatherObject]?
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        if let weatherArray = weatherArray {
+            return weatherArray.count
+        }
+       else{
+            return 1
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -37,7 +42,14 @@ class TableDataSource: NSObject, UITableViewDataSource {
         }
     }
     
-
-
-    
+//    func catchNotification(notification:Notification) -> Void {
+//        print("Catch notification")
+//        guard let userInfo = notification.userInfo,
+//            let array = userInfo["five day forecast"] as? WeatherObject else {
+//                print("No userInfo found in notification")
+//                return
+//        }
+        
+        
+        
 }
