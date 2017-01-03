@@ -16,8 +16,6 @@
 		E31276631E0F05530077E52D /* WeatherAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31276621E0F05530077E52D /* WeatherAppUITests.swift */; };
 		E31276711E0F05910077E52D /* WeatherAPIManager .swift in Sources */ = {isa = PBXBuildFile; fileRef = E31276701E0F05900077E52D /* WeatherAPIManager .swift */; };
 		E31276751E0F05BB0077E52D /* WeatherObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31276741E0F05BB0077E52D /* WeatherObject.swift */; };
-		E312767B1E0F064B0077E52D /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31276791E0F064B0077E52D /* WeatherTableViewCell.swift */; };
-		E312767C1E0F064B0077E52D /* WeatherTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E312767A1E0F064B0077E52D /* WeatherTableViewCell.xib */; };
 		E32D8CFC1E1B2D75008728DB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32D8CFB1E1B2D75008728DB /* Constants.swift */; };
 		E32D8CFE1E1B3909008728DB /* CatFactsSerializerAndParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32D8CFD1E1B3909008728DB /* CatFactsSerializerAndParser.swift */; };
 		E32D8D001E1B4A8D008728DB /* APIManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32D8CFF1E1B4A8D008728DB /* APIManagerProtocol.swift */; };
@@ -26,6 +24,10 @@
 		E37CBCFC1E16F23C0081EE83 /* ForecastSerializerAndParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37CBCFB1E16F23C0081EE83 /* ForecastSerializerAndParser.swift */; };
 		E37CBCFE1E170BC00081EE83 /* ParserID.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37CBCFD1E170BC00081EE83 /* ParserID.swift */; };
 		E3CA011D1E1C0139005106D5 /* APIManagerParserCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CA011C1E1C0139005106D5 /* APIManagerParserCoordinator.swift */; };
+		E3CA01311E1C28F6005106D5 /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CA012F1E1C28F6005106D5 /* WeatherTableViewCell.swift */; };
+		E3CA01321E1C28F6005106D5 /* WeatherTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3CA01301E1C28F6005106D5 /* WeatherTableViewCell.xib */; };
+		E3CA01721E1C43CF005106D5 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CA01711E1C43CF005106D5 /* TableViewController.swift */; };
+		E3CA01741E1C43E1005106D5 /* TableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CA01731E1C43E1005106D5 /* TableDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,8 +63,6 @@
 		E31276641E0F05530077E52D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E31276701E0F05900077E52D /* WeatherAPIManager .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WeatherAPIManager .swift"; sourceTree = "<group>"; };
 		E31276741E0F05BB0077E52D /* WeatherObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherObject.swift; sourceTree = "<group>"; };
-		E31276791E0F064B0077E52D /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCell.swift; sourceTree = "<group>"; };
-		E312767A1E0F064B0077E52D /* WeatherTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeatherTableViewCell.xib; sourceTree = "<group>"; };
 		E32D8CFB1E1B2D75008728DB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E32D8CFD1E1B3909008728DB /* CatFactsSerializerAndParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatFactsSerializerAndParser.swift; sourceTree = "<group>"; };
 		E32D8CFF1E1B4A8D008728DB /* APIManagerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManagerProtocol.swift; sourceTree = "<group>"; };
@@ -71,6 +71,10 @@
 		E37CBCFB1E16F23C0081EE83 /* ForecastSerializerAndParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ForecastSerializerAndParser.swift; path = ../ForecastSerializerAndParser.swift; sourceTree = "<group>"; };
 		E37CBCFD1E170BC00081EE83 /* ParserID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserID.swift; sourceTree = "<group>"; };
 		E3CA011C1E1C0139005106D5 /* APIManagerParserCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIManagerParserCoordinator.swift; path = ../APIManagerParserCoordinator.swift; sourceTree = "<group>"; };
+		E3CA012F1E1C28F6005106D5 /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCell.swift; sourceTree = "<group>"; };
+		E3CA01301E1C28F6005106D5 /* WeatherTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeatherTableViewCell.xib; sourceTree = "<group>"; };
+		E3CA01711E1C43CF005106D5 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		E3CA01731E1C43E1005106D5 /* TableDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,7 +131,6 @@
 				E31276761E0F05CB0077E52D /* Model */,
 				E31276771E0F05F80077E52D /* Controller */,
 				E312767D1E0F06530077E52D /* View */,
-				E31276461E0F05530077E52D /* Main.storyboard */,
 				E31276491E0F05530077E52D /* Assets.xcassets */,
 				E312764B1E0F05530077E52D /* LaunchScreen.storyboard */,
 				E312764E1E0F05530077E52D /* Info.plist */,
@@ -158,7 +161,6 @@
 			children = (
 				E37CBCFD1E170BC00081EE83 /* ParserID.swift */,
 				E31276741E0F05BB0077E52D /* WeatherObject.swift */,
-				E3CA011C1E1C0139005106D5 /* APIManagerParserCoordinator.swift */,
 				E37CBCFF1E170FE60081EE83 /* APIManagers */,
 				E37CBD021E17101A0081EE83 /* Parsers */,
 			);
@@ -169,6 +171,8 @@
 			isa = PBXGroup;
 			children = (
 				E31276441E0F05530077E52D /* ViewController.swift */,
+				E3CA01711E1C43CF005106D5 /* TableViewController.swift */,
+				E3CA01731E1C43E1005106D5 /* TableDataSource.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -176,8 +180,9 @@
 		E312767D1E0F06530077E52D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E31276791E0F064B0077E52D /* WeatherTableViewCell.swift */,
-				E312767A1E0F064B0077E52D /* WeatherTableViewCell.xib */,
+				E31276461E0F05530077E52D /* Main.storyboard */,
+				E3CA012F1E1C28F6005106D5 /* WeatherTableViewCell.swift */,
+				E3CA01301E1C28F6005106D5 /* WeatherTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -196,6 +201,7 @@
 			children = (
 				E31276701E0F05900077E52D /* WeatherAPIManager .swift */,
 				E33BF9021E1ADCAF00F883BE /* CatFactsAPIManager.swift */,
+				E3CA011C1E1C0139005106D5 /* APIManagerParserCoordinator.swift */,
 			);
 			name = APIManagers;
 			sourceTree = "<group>";
@@ -316,7 +322,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E312767C1E0F064B0077E52D /* WeatherTableViewCell.xib in Resources */,
+				E3CA01321E1C28F6005106D5 /* WeatherTableViewCell.xib in Resources */,
 				E312764D1E0F05530077E52D /* LaunchScreen.storyboard in Resources */,
 				E312764A1E0F05530077E52D /* Assets.xcassets in Resources */,
 				E31276481E0F05530077E52D /* Main.storyboard in Resources */,
@@ -344,18 +350,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E312767B1E0F064B0077E52D /* WeatherTableViewCell.swift in Sources */,
 				E33BF9031E1ADCAF00F883BE /* CatFactsAPIManager.swift in Sources */,
+				E3CA01721E1C43CF005106D5 /* TableViewController.swift in Sources */,
 				E32D8D021E1B4D11008728DB /* ParserProtocol.swift in Sources */,
 				E3CA011D1E1C0139005106D5 /* APIManagerParserCoordinator.swift in Sources */,
 				E31276711E0F05910077E52D /* WeatherAPIManager .swift in Sources */,
 				E31276451E0F05530077E52D /* ViewController.swift in Sources */,
 				E37CBCFE1E170BC00081EE83 /* ParserID.swift in Sources */,
+				E3CA01741E1C43E1005106D5 /* TableDataSource.swift in Sources */,
 				E32D8D001E1B4A8D008728DB /* APIManagerProtocol.swift in Sources */,
 				E37CBCFC1E16F23C0081EE83 /* ForecastSerializerAndParser.swift in Sources */,
 				E31276431E0F05530077E52D /* AppDelegate.swift in Sources */,
 				E31276751E0F05BB0077E52D /* WeatherObject.swift in Sources */,
 				E32D8CFC1E1B2D75008728DB /* Constants.swift in Sources */,
+				E3CA01311E1C28F6005106D5 /* WeatherTableViewCell.swift in Sources */,
 				E32D8CFE1E1B3909008728DB /* CatFactsSerializerAndParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
