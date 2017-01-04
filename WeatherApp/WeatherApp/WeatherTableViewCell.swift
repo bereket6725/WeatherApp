@@ -10,6 +10,8 @@ import UIKit
 
 class WeatherTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var maxLabel: UILabel!
+    @IBOutlet weak var minLabel: UILabel!
     @IBOutlet weak var backgroundPusheenImage: UIImageView!
     @IBOutlet weak var morningLabel: UILabel!
     @IBOutlet weak var dayLabel: UILabel!
@@ -20,6 +22,7 @@ class WeatherTableViewCell: UITableViewCell {
     @IBOutlet weak var humidityLabel: UILabel!
     
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var catFactLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

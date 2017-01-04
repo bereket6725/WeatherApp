@@ -26,6 +26,7 @@ class TableViewController: UIViewController, UITableViewDelegate {
         dataSource = TableDataSource()
         tableView.dataSource = dataSource
         self.dataSource.weatherArray = [WeatherObject]()
+        self.dataSource.catFactsArray = [String]()
         tableView.reloadData()
         makeNetworkRequests()
         
@@ -33,6 +34,13 @@ class TableViewController: UIViewController, UITableViewDelegate {
     }
     
     func makeNetworkRequests(){
+        callCatFactsAPI(){ catFactsArray in
+            print("\(catFactsArray)")
+            self.dataSource.catFactsArray = catFactsArray
+            DispatchQueue.main.async{
+                self.tableView.reloadData()
+            }
+        }
         callWeatherAPI(){ parsedArray in
             print("\(parsedArray)\n")
             print("all good")
@@ -44,10 +52,7 @@ class TableViewController: UIViewController, UITableViewDelegate {
             
         }
     }
-    //        callCatFactsAPI(){ catFactsArray in
-    //            print("\(catFactsArray)")
-    //            print("all good ")
-    //        }
+
     
     
     
