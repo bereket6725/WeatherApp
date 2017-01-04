@@ -43,14 +43,6 @@ class TableViewController: UIViewController, UITableViewDelegate {
             
         }
     }
-//    func sendOverWeatherObjectArray(weatherArray: [WeatherObject]){
-//        let nc = NotificationCenter.default
-//        nc.post(name: Notification.Name(rawValue: "WeatherArray"),
-//                object:nil, queue: nil, using:dataSource.catchNotification,  userInfo: ["five day forecast":weatherArray])
-//    }
-    
-    
-    
     //        callCatFactsAPI(){ catFactsArray in
     //            print("\(catFactsArray)")
     //            print("all good ")
