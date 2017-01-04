@@ -21,6 +21,7 @@ class TableViewController: UIViewController, UITableViewDelegate {
         tableView = UITableView(frame: view.bounds)
         //tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellID")
         tableView.register(UINib(nibName:"WeatherTableViewCell", bundle: nil), forCellReuseIdentifier: "weatherCell")
+        tableView.rowHeight = 250.00
         view.addSubview(tableView)
         dataSource = TableDataSource()
         tableView.dataSource = dataSource

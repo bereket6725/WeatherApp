@@ -8,10 +8,10 @@
 
 import Foundation
 
-class ForecastSerializerAndParser:parserProtocol {
+class ForecastSerializerAndParser:ParserProtocol {
     typealias JSONStandard = [String:AnyObject]
     
-   static func serializeAndParseJSON<T>(data: Data, completion: @escaping (_ parsedArray: [T])->Void){
+    static func serializeAndParseJSON<T>(data: Data, completion: @escaping ((_ parsedArray: [T])->Void,error:Error)){
         var parsedArray: [T] = []
         
         do{
@@ -19,7 +19,7 @@ class ForecastSerializerAndParser:parserProtocol {
             //print("\(json)")
             guard let forecasts = json["list"] else {
                 print("problems pulling array out of JSON")
-                return
+                completion(nil, error)
             }
             guard let forecastArray = forecasts as? [[String:AnyObject]] else {
                 print("error")
