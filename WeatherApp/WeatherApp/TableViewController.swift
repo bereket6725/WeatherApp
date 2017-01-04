@@ -17,15 +17,15 @@ class TableViewController: UIViewController, UITableViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableView = UITableView(frame: view.bounds)
         //tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellID")
         tableView.register(UINib(nibName:"WeatherTableViewCell", bundle: nil), forCellReuseIdentifier: "weatherCell")
         view.addSubview(tableView)
         dataSource = TableDataSource()
         tableView.dataSource = dataSource
+        self.dataSource.weatherArray = [WeatherObject]()
         tableView.reloadData()
-        
-        
         makeNetworkRequests()
         
         
@@ -35,8 +35,7 @@ class TableViewController: UIViewController, UITableViewDelegate {
         callWeatherAPI(){ parsedArray in
             print("\(parsedArray)\n")
             print("all good")
-            self.dataSource.weatherArray = parsedArray  
-           // self.sendOverWeatherObjectArray(weatherArray: parsedArray)
+            self.dataSource.weatherArray = parsedArray
             DispatchQueue.main.async{
                 self.tableView.reloadData()
                 
