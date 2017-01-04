@@ -9,10 +9,10 @@
 import Foundation
 
 
-class CatFactsSerializerAndParser: ParserProtocol{
+class CatFactsSerializerAndParser: parserProtocol{
     typealias JSONStandard = [String:AnyObject]
 
-    static func serializeAndParseJSON<T>(data: Data, completion:@escaping (([T])->Void), Error: Error){
+    static func serializeAndParseJSON<T>(data: Data, completion:@escaping (([T])->Void)){
         
         do{
             let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as! JSONStandard
@@ -26,7 +26,7 @@ class CatFactsSerializerAndParser: ParserProtocol{
             }
          }
         catch{
-            
+            print("\(error.localizedDescription)")
         }
     }
     

@@ -11,7 +11,7 @@ import Foundation
 
 struct WeatherObject{
     //date
-    let dt:      Int
+    let date:      Int
     //temperature
     let min:     Int
     let max:     Int
