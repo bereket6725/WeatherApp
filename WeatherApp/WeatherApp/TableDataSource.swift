@@ -21,7 +21,7 @@ class TableDataSource: NSObject, UITableViewDataSource {
             return weatherArray.count
         }
        else{
-           return (weatherArray?.count)!
+           return 5
         }
     }
     
@@ -35,7 +35,10 @@ class TableDataSource: NSObject, UITableViewDataSource {
             cell.nightLabel.text = "night"
             cell.speedLabel.text = "speed"
             
+            
+            
             return cell
+            
         }
         else{
             print("error matching cells to array values")
