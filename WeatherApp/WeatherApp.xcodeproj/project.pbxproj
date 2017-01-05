@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		E31276431E0F05530077E52D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31276421E0F05530077E52D /* AppDelegate.swift */; };
-		E31276451E0F05530077E52D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31276441E0F05530077E52D /* ViewController.swift */; };
 		E31276481E0F05530077E52D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E31276461E0F05530077E52D /* Main.storyboard */; };
 		E312764A1E0F05530077E52D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E31276491E0F05530077E52D /* Assets.xcassets */; };
 		E312764D1E0F05530077E52D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E312764B1E0F05530077E52D /* LaunchScreen.storyboard */; };
@@ -50,7 +49,6 @@
 /* Begin PBXFileReference section */
 		E312763F1E0F05530077E52D /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E31276421E0F05530077E52D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E31276441E0F05530077E52D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E31276471E0F05530077E52D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E31276491E0F05530077E52D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E312764C1E0F05530077E52D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -170,7 +168,6 @@
 		E31276771E0F05F80077E52D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				E31276441E0F05530077E52D /* ViewController.swift */,
 				E3CA01711E1C43CF005106D5 /* TableViewController.swift */,
 				E3CA01731E1C43E1005106D5 /* TableDataSource.swift */,
 			);
@@ -355,7 +352,6 @@
 				E32D8D021E1B4D11008728DB /* ParserProtocol.swift in Sources */,
 				E3CA011D1E1C0139005106D5 /* APIManagerParserCoordinator.swift in Sources */,
 				E31276711E0F05910077E52D /* WeatherAPIManager .swift in Sources */,
-				E31276451E0F05530077E52D /* ViewController.swift in Sources */,
 				E37CBCFE1E170BC00081EE83 /* ParserID.swift in Sources */,
 				E3CA01741E1C43E1005106D5 /* TableDataSource.swift in Sources */,
 				E32D8D001E1B4A8D008728DB /* APIManagerProtocol.swift in Sources */,
