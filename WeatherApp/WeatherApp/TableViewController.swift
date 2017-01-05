@@ -35,6 +35,10 @@ class TableViewController: UIViewController, UITableViewDelegate {
         callCatFactsAPI(){ catFactsArray in
             print("\(catFactsArray)")
             self.dataSource.catFactsArray = catFactsArray
+            guard self.dataSource.catFactsArray != nil else{
+                self.showErrorMessage()
+                return
+            }
             DispatchQueue.main.async{
                 self.tableView.reloadData()
             }
@@ -43,6 +47,10 @@ class TableViewController: UIViewController, UITableViewDelegate {
             print("\(parsedArray)\n")
             print("all good")
             self.dataSource.weatherArray = parsedArray
+            guard self.dataSource.weatherArray != nil else{
+                self.showErrorMessage()
+                return
+            }
             DispatchQueue.main.async{
                 self.tableView.reloadData()
                 
