@@ -22,12 +22,13 @@ class WeatherTableViewCell: UITableViewCell {
     @IBOutlet weak var humidityLabel: UILabel!
     
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var catFactLabel: UILabel!
+    @IBOutlet weak var catFactTextView: UITextView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
+        self.catFactTextView.isEditable = false
+        self.catFactTextView.isScrollEnabled = false 
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

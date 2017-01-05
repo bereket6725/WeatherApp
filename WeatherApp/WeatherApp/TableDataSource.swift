@@ -50,11 +50,16 @@ class TableDataSource: NSObject, UITableViewDataSource {
                 
                 if let catFactsArray = catFactsArray {
                     if catFactsArray.count > 0 {
-                        cell.catFactLabel.text = catFactsArray[indexPath.row]
+                        cell.catFactTextView.text = catFactsArray[indexPath.row]
                     }
                 }
-                cell.backgroundPusheenImage.image = UIImage(named: cell.mainLabel.text!)
-                
+                //guarantee that the background image will hold a picture in case none of our images match the what the "main" is from our array
+                if let pusheenImage = UIImage(named:cell.mainLabel.text!){
+                    cell.backgroundPusheenImage.image = pusheenImage
+                }
+                else{
+                    cell.backgroundPusheenImage.image = UIImage(named: "default")
+                }
                 return cell
             }
             else{

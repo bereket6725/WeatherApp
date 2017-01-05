@@ -29,8 +29,6 @@ class TableViewController: UIViewController, UITableViewDelegate {
         self.dataSource.catFactsArray = [String]()
         tableView.reloadData()
         makeNetworkRequests()
-        
-        
     }
     
     func makeNetworkRequests(){
@@ -49,12 +47,8 @@ class TableViewController: UIViewController, UITableViewDelegate {
                 self.tableView.reloadData()
                 
             }
-            
         }
     }
-
-    
-    
     
     func showErrorMessage(){
         let alertController = UIAlertController(title: nil, message: "Error Grabbing Weather", preferredStyle: .alert)
@@ -65,7 +59,6 @@ class TableViewController: UIViewController, UITableViewDelegate {
         }
     }
     
-    
     func callWeatherAPI(completion:@escaping ([WeatherObject])->Void){
         WeatherAPIManager.makeAPICall(completion: completion)
     }
@@ -74,11 +67,4 @@ class TableViewController: UIViewController, UITableViewDelegate {
         CatFactsAPIManager.makeAPICall(completion: completion)
         
     }
-    
-    
-    
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    }
-    
 }
