@@ -10,7 +10,6 @@ import Foundation
 
 
 class APIManagerParserCoordinator {
-    
     //determines which parser the manager should send its info to using the managers parserID"
     static func connectToParser<T>(ID:(data: Data, parserTupleID: ParserID), completion:@escaping (([T])->Void) ){
         let parserID = ID
