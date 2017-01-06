@@ -13,13 +13,11 @@ class TableViewController: UIViewController, UITableViewDelegate {
     
     var tableView: UITableView!
     var dataSource: TableDataSource!
-    //var weatherArray: [WeatherObject] = []
     
+    //sets up tableView and calls the function to make the network request
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tableView = UITableView(frame: view.bounds)
-        //tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellID")
         tableView.register(UINib(nibName:"WeatherTableViewCell", bundle: nil), forCellReuseIdentifier: "weatherCell")
         tableView.rowHeight = 250.00
         view.addSubview(tableView)
@@ -31,6 +29,7 @@ class TableViewController: UIViewController, UITableViewDelegate {
         makeNetworkRequests()
     }
     
+    //calls the API's and assigns returned values to corresponding properties on the data source
     func makeNetworkRequests(){
         callCatFactsAPI(){ catFactsArray in
             print("\(catFactsArray)")
@@ -58,6 +57,7 @@ class TableViewController: UIViewController, UITableViewDelegate {
         }
     }
     
+    //in case we come up short from our network request
     func showErrorMessage(){
         let alertController = UIAlertController(title: nil, message: "Error Grabbing Weather", preferredStyle: .alert)
         let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
@@ -66,6 +66,7 @@ class TableViewController: UIViewController, UITableViewDelegate {
             self.present(alertController, animated: true, completion: nil)
         }
     }
+    
     
     func callWeatherAPI(completion:@escaping ([WeatherObject])->Void){
         WeatherAPIManager.makeAPICall(completion: completion)

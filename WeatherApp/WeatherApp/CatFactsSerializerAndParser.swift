@@ -11,7 +11,8 @@ import Foundation
 
 class CatFactsSerializerAndParser: parserProtocol{
     typealias JSONStandard = [String:AnyObject]
-
+    
+    //parses cat fact data 
     static func serializeAndParseJSON<T>(data: Data, completion:@escaping (([T])->Void)){
         
         do{

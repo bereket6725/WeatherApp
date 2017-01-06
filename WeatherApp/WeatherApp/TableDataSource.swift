@@ -11,11 +11,15 @@ import UIKit
 
 
 class TableDataSource: NSObject, UITableViewDataSource {
+    //gets its values from the TableViewController "makeAPICall" completion parameters
     var weatherArray:[WeatherObject]?
     var catFactsArray: [String]?
+    
+    //delegate method
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
+    //delegate method
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let weatherArray = weatherArray {
             return weatherArray.count
@@ -27,17 +31,14 @@ class TableDataSource: NSObject, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "weatherCell") as? WeatherTableViewCell{
-            
-            
             if let weatherArray = weatherArray {
-                
+                //converts the date we get from the API to something readable
                 let dateInteger = weatherArray[indexPath.row].date/1000
                 let currentDate = Date(timeIntervalSince1970: TimeInterval(dateInteger))
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "MMM dd,yyyy"
                 let formattedDate = dateFormatter.string(from: currentDate)
-                
-                
+                //casts properties of the Weather array to their appropriate type and presents them to their corresponding cell
                 cell.minLabel.text       = "min" + String(describing: weatherArray[indexPath.row].min)
                 cell.maxLabel.text       = "max" + String(describing: weatherArray[indexPath.row].max)
                 cell.dateLabel.text     = formattedDate
@@ -47,7 +48,7 @@ class TableDataSource: NSObject, UITableViewDataSource {
                 cell.mainLabel.text     = weatherArray[indexPath.row].main
                 cell.nightLabel.text    = String(describing: weatherArray[indexPath.row].night)
                 cell.speedLabel.text    = String(describing: weatherArray[indexPath.row].speed)
-                
+                //network requests will return at undetermined times, so here we are only filling in the TextView when we know have cat facts
                 if let catFactsArray = catFactsArray {
                     if catFactsArray.count > 0 {
                         cell.catFactTextView.text = catFactsArray[indexPath.row]

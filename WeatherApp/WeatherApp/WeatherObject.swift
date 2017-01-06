@@ -8,7 +8,7 @@
 
 import Foundation
 
-
+//model for our five day forecast
 struct WeatherObject{
     //date
     let date:      Int

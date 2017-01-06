@@ -10,7 +10,8 @@ import Foundation
 
 class ForecastSerializerAndParser:parserProtocol {
     typealias JSONStandard = [String:AnyObject]
-    
+   
+    //parses Weather Data
    static func serializeAndParseJSON<T>(data: Data, completion: @escaping (_ parsedArray: [T])->Void){
         var parsedArray: [T] = []
         
