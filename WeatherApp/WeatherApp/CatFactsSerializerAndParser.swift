@@ -22,7 +22,6 @@ class CatFactsSerializerAndParser: parserProtocol{
                 return
             }
             if let parsedArray = json["facts"] as? NSArray{
-                //print("\(catFactsArray)")
                 completion(parsedArray as! [T])
             }
          }

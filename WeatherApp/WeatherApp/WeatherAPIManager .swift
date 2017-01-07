@@ -28,10 +28,6 @@ class WeatherAPIManager: APIManagerProtocol{
             APIManagerParserCoordinator.connectToParser(ID: (data!, parserID)){ parsedArray in
                 completion(parsedArray)
             }
-//            ForecastSerializerAndParser.serializeAndParseJSON(data: data!){ parsedArray in
-//                completion(parsedArray)
-//            }
-            //self.FiveDayForecastFromJSON(data: data!)
         }
         task.resume()
     }

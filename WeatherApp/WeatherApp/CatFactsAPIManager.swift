@@ -18,16 +18,12 @@ class CatFactsAPIManager:APIManagerProtocol{
             print("problem with URL")
             return
         }
-        
         let session = URLSession.shared
         let task = session.dataTask(with: url){ (data, response, error) in
             guard data != nil else {
                 print("\(error?.localizedDescription)")
                 return
             }
-//            CatFactsSerializerAndParser.serializeAndParseJSON(data: data!){ catFactsArray in
-//                completion(catFactsArray)
-//            }
             APIManagerParserCoordinator.connectToParser(ID: (data!, parserID)){ catFactsArray in
                 completion(catFactsArray)
             }

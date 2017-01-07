@@ -16,15 +16,10 @@ class APIManagerParserCoordinator {
         
         switch(parserID.parserTupleID){
         case .CatFacts:
-          return  CatFactsSerializerAndParser.serializeAndParseJSON(data: parserID.data){ catFactsArray in
-                completion(catFactsArray)
-            }
+          return  CatFactsSerializerAndParser.serializeAndParseJSON(data: parserID.data, completion: completion)
         case .FiveDayForeCast:
-          return  ForecastSerializerAndParser.serializeAndParseJSON(data: parserID.data){ parsedArray in
-                completion(parsedArray)
+          return  ForecastSerializerAndParser.serializeAndParseJSON(data: parserID.data, completion: completion)
         }
-        
-    }
     
     }
 }

@@ -27,6 +27,8 @@
 		E3CA01321E1C28F6005106D5 /* WeatherTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3CA01301E1C28F6005106D5 /* WeatherTableViewCell.xib */; };
 		E3CA01721E1C43CF005106D5 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CA01711E1C43CF005106D5 /* TableViewController.swift */; };
 		E3CA01741E1C43E1005106D5 /* TableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CA01731E1C43E1005106D5 /* TableDataSource.swift */; };
+		E3D978F51E214EAD006D0181 /* ParserUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D978F41E214EAD006D0181 /* ParserUnitTests.swift */; };
+		E3D978F71E215122006D0181 /* CorrectWeather.json in Resources */ = {isa = PBXBuildFile; fileRef = E3D978F61E215122006D0181 /* CorrectWeather.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		E3CA01301E1C28F6005106D5 /* WeatherTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeatherTableViewCell.xib; sourceTree = "<group>"; };
 		E3CA01711E1C43CF005106D5 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		E3CA01731E1C43E1005106D5 /* TableDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableDataSource.swift; sourceTree = "<group>"; };
+		E3D978F41E214EAD006D0181 /* ParserUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserUnitTests.swift; sourceTree = "<group>"; };
+		E3D978F61E215122006D0181 /* CorrectWeather.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CorrectWeather.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +145,8 @@
 			children = (
 				E31276571E0F05530077E52D /* WeatherAppTests.swift */,
 				E31276591E0F05530077E52D /* Info.plist */,
+				E3D978F41E214EAD006D0181 /* ParserUnitTests.swift */,
+				E3D978F61E215122006D0181 /* CorrectWeather.json */,
 			);
 			path = WeatherAppTests;
 			sourceTree = "<group>";
@@ -330,6 +336,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3D978F71E215122006D0181 /* CorrectWeather.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +375,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3D978F51E214EAD006D0181 /* ParserUnitTests.swift in Sources */,
 				E31276581E0F05530077E52D /* WeatherAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

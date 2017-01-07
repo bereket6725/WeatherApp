@@ -41,9 +41,8 @@ class ForecastSerializerAndParser:parserProtocol {
                         }
                     }
                 }
-                
+
             }
-            //print("\(fiveDayForecast)")
             completion(parsedArray)
         }
         catch{
