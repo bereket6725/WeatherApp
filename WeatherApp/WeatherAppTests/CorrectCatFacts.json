@@ -1,0 +1,13 @@
+//json holding cat facts data to test
+{
+    "facts":
+    [
+     "Cats have 30 vertebrae (humans have 33 vertebrae during early development; 26 after the sacral and coccygeal regions fuse)",
+     "A tomcat (male cat) can begin mating when he is between 7 and 10 months old.",
+     "The average litter of kittens is between 2 - 6 kittens.",
+     "A cat's normal pulse is 140-240 beats per minute, with an average of 195.",
+     "An estimated 50% of today's cat owners never take their cats to a veterinarian for health care. Too, because cats tend to keep their problems to themselves, many owners think their cat is perfectly healthy when actually they may be suffering from a life-threatening disease. Therefore, cats, on an average, are much sicker than dogs by the time they are brought to your veterinarian for treatment."
+     ],
+    "success":
+    "true"
+}
