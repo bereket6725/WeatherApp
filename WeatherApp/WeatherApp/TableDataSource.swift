@@ -16,17 +16,8 @@ class TableDataSource: NSObject, UITableViewDataSource {
     var catFactsArray: [String]?
     
     //delegate method
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    //delegate method
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let weatherArray = weatherArray {
-            return weatherArray.count
-        }
-        else{
-            return 1
-        }
+        return weatherArray?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -73,7 +64,6 @@ class TableDataSource: NSObject, UITableViewDataSource {
             return UITableViewCell()
         }
     }
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
         return 250.00//Choose your custom row height
