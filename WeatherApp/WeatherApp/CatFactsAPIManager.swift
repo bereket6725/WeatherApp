@@ -10,9 +10,7 @@ import Foundation
 
 
 class CatFactsAPIManager:APIManagerProtocol{
-    
-    static func makeAPICall<T>(completion: @escaping (([T])->Void)){
-        let parserID: ParserID = .CatFacts
+    static func makeAPICall<T:Parsable>(completion: @escaping (([T])->Void)){
         let urlString = Constants.CatFactsAPI.url
         guard let url = URL(string: urlString) else {
             print("problem with URL")
@@ -24,16 +22,14 @@ class CatFactsAPIManager:APIManagerProtocol{
                 print("\(error?.localizedDescription)")
                 return
             }
-            APIManagerParserCoordinator.connectToParser(ID: (data!, parserID)){ catFactsArray in
-                completion(catFactsArray)
-            }
-            
-            //print("\(data)")
+            let catFactsArray = T.parseJSON(data: data!)
+            completion(catFactsArray)
         }
         task.resume()
         
     }
 }
+
 
 
 

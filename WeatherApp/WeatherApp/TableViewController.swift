@@ -52,7 +52,6 @@ class TableViewController: UIViewController, UITableViewDelegate {
             }
             DispatchQueue.main.async{
                 self.tableView.reloadData()
-                
             }
         }
     }

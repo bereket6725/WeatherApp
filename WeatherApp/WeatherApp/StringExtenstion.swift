@@ -1,35 +1,32 @@
 //
-//  CatFactsSerializerAndParser.swift
+//  StringExtenstion.swift
 //  WeatherApp
 //
-//  Created by Bereket Ghebremedhin on 1/2/17.
+//  Created by Bereket Ghebremedhin on 1/9/17.
 //  Copyright © 2017 Bereket Ghebremedhin. All rights reserved.
 //
 
 import Foundation
 
-
-class CatFactsSerializerAndParser: parserProtocol{
+extension String: Parsable {
     typealias JSONStandard = [String:AnyObject]
-    
-    //parses cat fact data 
-    static func serializeAndParseJSON<T>(data: Data, completion:@escaping (([T])->Void)){
-        
+    static func parseJSON(data: Data)->[String]{
+        let parsedArray: [String] = []
         do{
             let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as! JSONStandard
             guard json["facts"] != nil else {
                 print("issues getting JSON from cat data")
-                return
+                return parsedArray
             }
             if let parsedArray = json["facts"] as? NSArray{
-                completion(parsedArray as! [T])
+                return parsedArray as! [String]
             }
-         }
+        }
         catch{
             print("\(error.localizedDescription)")
         }
+        return parsedArray
     }
     
-    
-    
 }
+

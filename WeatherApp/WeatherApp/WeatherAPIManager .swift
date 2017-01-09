@@ -10,10 +10,8 @@ import Foundation
 
 
 class WeatherAPIManager: APIManagerProtocol{
-    //typealias JSONStandard = [String:AnyObject]
     //makes API call
-    static func makeAPICall<T>(completion:@escaping ([T])->Void){
-        let parserID: ParserID = .FiveDayForeCast
+    static func makeAPICall<T:Parsable>(completion:@escaping ([T])->Void){
         let urlString = Constants.openWeatherMapsAPI.url
         guard let url = URL(string: urlString) else {
             print("problem with URL")
@@ -25,9 +23,9 @@ class WeatherAPIManager: APIManagerProtocol{
                 print("\(error?.localizedDescription)")
                 return
             }
-            APIManagerParserCoordinator.connectToParser(ID: (data!, parserID)){ parsedArray in
-                completion(parsedArray)
-            }
+            let fiveDayForecast = T.parseJSON(data: data!)
+            completion(fiveDayForecast)
+            
         }
         task.resume()
     }
