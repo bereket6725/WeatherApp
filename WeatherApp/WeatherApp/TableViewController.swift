@@ -23,33 +23,20 @@ class TableViewController: UIViewController, UITableViewDelegate {
         view.addSubview(tableView)
         dataSource = TableDataSource()
         tableView.dataSource = dataSource
-        self.dataSource.weatherArray = [WeatherObject]()
-        self.dataSource.catFactsArray = [String]()
         tableView.reloadData()
         makeNetworkRequests()
     }
     
     //calls the API's and assigns returned values to corresponding properties on the data source
-    func makeNetworkRequests(){
-        callCatFactsAPI(){ catFactsArray in
-            print("\(catFactsArray)")
+    func makeNetworkRequests() {
+        callCatFactsAPI() { catFactsArray in
             self.dataSource.catFactsArray = catFactsArray
-            guard self.dataSource.catFactsArray != nil else{
-                self.showErrorMessage()
-                return
-            }
             DispatchQueue.main.async{
                 self.tableView.reloadData()
             }
         }
-        callWeatherAPI(){ parsedArray in
-            print("\(parsedArray)\n")
-            print("all good")
+        callWeatherAPI() { parsedArray in
             self.dataSource.weatherArray = parsedArray
-            guard self.dataSource.weatherArray != nil else{
-                self.showErrorMessage()
-                return
-            }
             DispatchQueue.main.async{
                 self.tableView.reloadData()
             }
@@ -57,7 +44,7 @@ class TableViewController: UIViewController, UITableViewDelegate {
     }
     
     //in case we come up short from our network request
-    func showErrorMessage(){
+    func showErrorMessage() {
         let alertController = UIAlertController(title: nil, message: "Error Grabbing Weather", preferredStyle: .alert)
         let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         alertController.addAction(alertAction)
@@ -68,11 +55,11 @@ class TableViewController: UIViewController, UITableViewDelegate {
     
     
     func callWeatherAPI(completion:@escaping ([WeatherObject])->Void){
-        WeatherAPIManager.makeAPICall(completion: completion)
+        APIManager.makeAPICall(urlString: Constants.openWeatherMapsAPI.url, completion: completion)
     }
     
     func callCatFactsAPI(completion: @escaping ([String])->Void){
-        CatFactsAPIManager.makeAPICall(completion: completion)
+        APIManager.makeAPICall(urlString: Constants.CatFactsAPI.url, completion: completion)
         
     }
 }

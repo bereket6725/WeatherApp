@@ -7,17 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8DD6EDC91E2600CA0036398C /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD6EDC81E2600CA0036398C /* APIManager.swift */; };
 		E31276431E0F05530077E52D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31276421E0F05530077E52D /* AppDelegate.swift */; };
 		E31276481E0F05530077E52D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E31276461E0F05530077E52D /* Main.storyboard */; };
 		E312764A1E0F05530077E52D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E31276491E0F05530077E52D /* Assets.xcassets */; };
 		E312764D1E0F05530077E52D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E312764B1E0F05530077E52D /* LaunchScreen.storyboard */; };
 		E31276581E0F05530077E52D /* WeatherAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31276571E0F05530077E52D /* WeatherAppTests.swift */; };
 		E31276631E0F05530077E52D /* WeatherAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31276621E0F05530077E52D /* WeatherAppUITests.swift */; };
-		E31276711E0F05910077E52D /* WeatherAPIManager .swift in Sources */ = {isa = PBXBuildFile; fileRef = E31276701E0F05900077E52D /* WeatherAPIManager .swift */; };
 		E31276751E0F05BB0077E52D /* WeatherObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31276741E0F05BB0077E52D /* WeatherObject.swift */; };
 		E32D8CFC1E1B2D75008728DB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32D8CFB1E1B2D75008728DB /* Constants.swift */; };
 		E32D8D001E1B4A8D008728DB /* APIManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32D8CFF1E1B4A8D008728DB /* APIManagerProtocol.swift */; };
-		E33BF9031E1ADCAF00F883BE /* CatFactsAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33BF9021E1ADCAF00F883BE /* CatFactsAPIManager.swift */; };
 		E34D07D21E24379E000AD933 /* Parsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34D07D11E24379E000AD933 /* Parsable.swift */; };
 		E34D07D91E244D7A000AD933 /* StringExtenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34D07D81E244D7A000AD933 /* StringExtenstion.swift */; };
 		E3CA01311E1C28F6005106D5 /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CA012F1E1C28F6005106D5 /* WeatherTableViewCell.swift */; };
@@ -47,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8DD6EDC81E2600CA0036398C /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		E312763F1E0F05530077E52D /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E31276421E0F05530077E52D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E31276471E0F05530077E52D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -59,11 +59,9 @@
 		E312765E1E0F05530077E52D /* WeatherAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E31276621E0F05530077E52D /* WeatherAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAppUITests.swift; sourceTree = "<group>"; };
 		E31276641E0F05530077E52D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E31276701E0F05900077E52D /* WeatherAPIManager .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WeatherAPIManager .swift"; sourceTree = "<group>"; };
 		E31276741E0F05BB0077E52D /* WeatherObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherObject.swift; sourceTree = "<group>"; };
 		E32D8CFB1E1B2D75008728DB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E32D8CFF1E1B4A8D008728DB /* APIManagerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManagerProtocol.swift; sourceTree = "<group>"; };
-		E33BF9021E1ADCAF00F883BE /* CatFactsAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatFactsAPIManager.swift; sourceTree = "<group>"; };
 		E34D07D11E24379E000AD933 /* Parsable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parsable.swift; sourceTree = "<group>"; };
 		E34D07D81E244D7A000AD933 /* StringExtenstion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtenstion.swift; sourceTree = "<group>"; };
 		E3CA012F1E1C28F6005106D5 /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCell.swift; sourceTree = "<group>"; };
@@ -207,8 +205,7 @@
 		E37CBCFF1E170FE60081EE83 /* APIManagers */ = {
 			isa = PBXGroup;
 			children = (
-				E31276701E0F05900077E52D /* WeatherAPIManager .swift */,
-				E33BF9021E1ADCAF00F883BE /* CatFactsAPIManager.swift */,
+				8DD6EDC81E2600CA0036398C /* APIManager.swift */,
 			);
 			name = APIManagers;
 			sourceTree = "<group>";
@@ -358,9 +355,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E33BF9031E1ADCAF00F883BE /* CatFactsAPIManager.swift in Sources */,
+				8DD6EDC91E2600CA0036398C /* APIManager.swift in Sources */,
 				E3CA01721E1C43CF005106D5 /* TableViewController.swift in Sources */,
-				E31276711E0F05910077E52D /* WeatherAPIManager .swift in Sources */,
 				E34D07D21E24379E000AD933 /* Parsable.swift in Sources */,
 				E3CA01741E1C43E1005106D5 /* TableDataSource.swift in Sources */,
 				E32D8D001E1B4A8D008728DB /* APIManagerProtocol.swift in Sources */,

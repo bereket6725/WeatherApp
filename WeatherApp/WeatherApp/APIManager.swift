@@ -1,17 +1,15 @@
 //
-//  CatFactsAPIManager.swift
+//  APIManager.swift
 //  WeatherApp
 //
-//  Created by Bereket Ghebremedhin on 1/2/17.
+//  Created by Michael Kavouras on 1/10/17.
 //  Copyright © 2017 Bereket Ghebremedhin. All rights reserved.
 //
 
 import Foundation
 
-
-class CatFactsAPIManager:APIManagerProtocol{
-    static func makeAPICall<T:Parsable>(completion: @escaping (([T])->Void)){
-        let urlString = Constants.CatFactsAPI.url
+class APIManager: APIManagerProtocol {
+    static func makeAPICall<T:Parsable>(urlString: String, completion: @escaping (([T])->Void)) {
         guard let url = URL(string: urlString) else {
             print("problem with URL")
             return
@@ -22,15 +20,10 @@ class CatFactsAPIManager:APIManagerProtocol{
                 print("\(error?.localizedDescription)")
                 return
             }
-            let catFactsArray = T.parseJSON(data: data!)
-            completion(catFactsArray)
+            let result = T.parseJSON(data: data!)
+            completion(result)
         }
         task.resume()
-        
     }
 }
-
-
-
-
 

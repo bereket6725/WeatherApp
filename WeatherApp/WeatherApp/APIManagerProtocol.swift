@@ -9,5 +9,5 @@
 import Foundation
 
 protocol APIManagerProtocol {
-    static func makeAPICall<T:Parsable>(completion: @escaping (([T])->Void))
+    static func makeAPICall<T:Parsable>(urlString: String, completion: @escaping (([T])->Void))
 }
