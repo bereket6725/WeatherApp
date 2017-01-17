@@ -26,6 +26,9 @@ class TableViewController: UIViewController, UITableViewDelegate {
         tableView.reloadData()
         makeNetworkRequests()
     }
+    func callNetwork<T:APIManagerProtocol>(networkToCall: T){
+
+    }
     
     //calls the API's and assigns returned values to corresponding properties on the data source
     func makeNetworkRequests() {

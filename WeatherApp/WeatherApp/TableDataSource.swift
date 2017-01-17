@@ -12,7 +12,7 @@ import UIKit
 
 class TableDataSource: NSObject, UITableViewDataSource {
     //gets its values from the TableViewController "makeAPICall" completion parameters
-    var weatherArray: [WeatherObject] = []
+    var weatherArray:[WeatherObject] = []
     var catFactsArray: [String] = []
     
     //delegate method
