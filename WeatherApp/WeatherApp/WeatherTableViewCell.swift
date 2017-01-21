@@ -16,19 +16,19 @@ class WeatherTableViewCell: UITableViewCell {
     @IBOutlet weak var morningLabel: UILabel!
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var nightLabel: UILabel!
-    
+
     @IBOutlet weak var speedLabel: UILabel!
     @IBOutlet weak var mainLabel: UILabel!
     @IBOutlet weak var humidityLabel: UILabel!
-    
+
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var catFactTextView: UITextView!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         self.catFactTextView.isEditable = false
-        self.catFactTextView.isScrollEnabled = false 
+        self.catFactTextView.isScrollEnabled = false
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -36,5 +36,5 @@ class WeatherTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+
 }

@@ -10,10 +10,10 @@ import Foundation
 import UIKit
 
 class TableViewController: UIViewController, UITableViewDelegate {
-    
+
     var tableView: UITableView!
     var dataSource: TableDataSource!
-    
+
     //sets up tableView and calls the function to make the network request
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,38 +30,37 @@ class TableViewController: UIViewController, UITableViewDelegate {
     func makeNetworkRequests() {
         callCatFactsAPI() { catFactsArray in
             self.dataSource.catFactsArray = catFactsArray
-            DispatchQueue.main.async{
+            DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
         }
         callWeatherAPI() { parsedArray in
             self.dataSource.weatherArray = parsedArray
             self.tableView.reloadData()
-            
+
         }
     }
-    
+
     //in case we come up short from our network request
     func showErrorMessage() {
         let alertController = UIAlertController(title: nil, message: "Error Grabbing Weather", preferredStyle: .alert)
         let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         alertController.addAction(alertAction)
-        DispatchQueue.main.async{
+        DispatchQueue.main.async {
             self.present(alertController, animated: true, completion: nil)
         }
     }
-    
-    
-    func callWeatherAPI(completion:@escaping ([WeatherObject])->Void){
+
+    func callWeatherAPI(completion:@escaping ([WeatherObject]) -> Void) {
         APIManager.makeAPICall(urlString: Constants.openWeatherMapsAPI.url, completion: { results in
             DispatchQueue.main.async {
                 completion(results)
             }
         })
-        
+
     }
-    
-    func callCatFactsAPI(completion: @escaping ([String])->Void){
+
+    func callCatFactsAPI(completion: @escaping ([String]) -> Void) {
         APIManager.makeAPICall(urlString: Constants.CatFactsAPI.url, completion: completion)
         //TODO: always dispatch to main queue
     }

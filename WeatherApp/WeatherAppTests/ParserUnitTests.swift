@@ -9,9 +9,8 @@
 import XCTest
 @testable import WeatherApp
 
-
 class ParserUnitTests: XCTestCase {
-    
+
     //    override func setUp() {
     //
     //    }
@@ -21,10 +20,10 @@ class ParserUnitTests: XCTestCase {
     //    }
     func testWeatherParserWorksWithCorrectData() {
         let weatherTestBundle = Bundle(for: ParserUnitTests.self)
-        if let url = weatherTestBundle.url(forResource: "CorrectWeather", withExtension: "json"){
+        if let url = weatherTestBundle.url(forResource: "CorrectWeather", withExtension: "json") {
             let JSONData = try! Data(contentsOf: url)//<--doesnt need error handling because we want to see if this will fail
             ForecastSerializerAndParser.serializeAndParseJSON(data: JSONData) { (results: [WeatherObject]) in
-                print("Weather Result:",results)
+                print("Weather Result:", results)
                 XCTAssertTrue(results[0].date == 1483808400)
                 XCTAssertTrue(results[0].min == 20)
                 XCTAssertTrue(results[0].max == 21)
@@ -39,10 +38,10 @@ class ParserUnitTests: XCTestCase {
         }
         XCTFail()
     }
-    
-    func testCatFactsParserWorksWithCorrectData(){
+
+    func testCatFactsParserWorksWithCorrectData() {
         let catFactsTestBundle = Bundle(for: ParserUnitTests.self)
-        if let url = catFactsTestBundle.url(forResource: "CorrectCatFacts", withExtension: "json"){
+        if let url = catFactsTestBundle.url(forResource: "CorrectCatFacts", withExtension: "json") {
             let JSONData = try! Data(contentsOf: url)
             CatFactsSerializerAndParser.serializeAndParseJSON(data: JSONData) { (results: [String]) in
                 print("Cat Fact Result:", results)

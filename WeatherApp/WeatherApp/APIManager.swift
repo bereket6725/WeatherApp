@@ -9,13 +9,13 @@
 import Foundation
 
 class APIManager: APIManagerProtocol {
-    static func makeAPICall<T:Parsable>(urlString: String, completion: @escaping (([T])->Void)) {
+    static func makeAPICall<T: Parsable>(urlString: String, completion: @escaping (([T]) -> Void)) {
         guard let url = URL(string: urlString) else {
             print("problem with URL")
             return
         }
         let session = URLSession.shared
-        let task = session.dataTask(with: url){ (data, response, error) in
+        let task = session.dataTask(with: url) { (data, _, error) in
             guard data != nil else {
                 print("\(error?.localizedDescription)")
                 return
@@ -26,4 +26,3 @@ class APIManager: APIManagerProtocol {
         task.resume()
     }
 }
-
