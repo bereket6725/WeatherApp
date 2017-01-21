@@ -9,11 +9,18 @@
 import Foundation
 import UIKit
 
+//create date formatters are expensive so we make one instance of it outside the scope instead of in the cellForRowAtIndexPath each time
+//Anything outside the scope of a class or struct is also initialized lazily
+fileprivate let dateFormatter: DateFormatter = {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "MMM dd,yyyy"
+    return dateFormatter
+}()
 
 class TableDataSource: NSObject, UITableViewDataSource {
     //gets its values from the TableViewController "makeAPICall" completion parameters
-    var weatherArray:[WeatherObject] = []
-    var catFactsArray: [String] = []
+    var weatherArray: [WeatherObject] = []
+    var catFactsArray: [CatFact] = []
     
     //delegate method
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -28,10 +35,7 @@ class TableDataSource: NSObject, UITableViewDataSource {
         let weather = weatherArray[indexPath.row]
         
         //converts the date we get from the API to something readable
-        let dateInteger = weather.date / 1000
-        let currentDate = Date(timeIntervalSince1970: TimeInterval(dateInteger))
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMM dd,yyyy"
+        let currentDate = Date(timeIntervalSince1970: TimeInterval(weather.date))
         let formattedDate = dateFormatter.string(from: currentDate)
         
         //casts properties of the Weather array to their appropriate type and presents them to their corresponding cell

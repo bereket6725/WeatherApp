@@ -8,7 +8,9 @@
 
 import Foundation
 
-extension String: Parsable {
+typealias CatFact = String
+
+extension CatFact: Parsable {
     typealias JSONStandard = [String:AnyObject]
     static func parseJSON(data: Data)->[String]{
         let parsedArray: [String] = []

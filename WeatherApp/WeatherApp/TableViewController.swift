@@ -23,13 +23,9 @@ class TableViewController: UIViewController, UITableViewDelegate {
         view.addSubview(tableView)
         dataSource = TableDataSource()
         tableView.dataSource = dataSource
-        tableView.reloadData()
         makeNetworkRequests()
     }
-    func callNetwork<T:APIManagerProtocol>(networkToCall: T){
 
-    }
-    
     //calls the API's and assigns returned values to corresponding properties on the data source
     func makeNetworkRequests() {
         callCatFactsAPI() { catFactsArray in
@@ -40,9 +36,8 @@ class TableViewController: UIViewController, UITableViewDelegate {
         }
         callWeatherAPI() { parsedArray in
             self.dataSource.weatherArray = parsedArray
-            DispatchQueue.main.async{
-                self.tableView.reloadData()
-            }
+            self.tableView.reloadData()
+            
         }
     }
     
@@ -58,11 +53,16 @@ class TableViewController: UIViewController, UITableViewDelegate {
     
     
     func callWeatherAPI(completion:@escaping ([WeatherObject])->Void){
-        APIManager.makeAPICall(urlString: Constants.openWeatherMapsAPI.url, completion: completion)
+        APIManager.makeAPICall(urlString: Constants.openWeatherMapsAPI.url, completion: { results in
+            DispatchQueue.main.async {
+                completion(results)
+            }
+        })
+        
     }
     
     func callCatFactsAPI(completion: @escaping ([String])->Void){
         APIManager.makeAPICall(urlString: Constants.CatFactsAPI.url, completion: completion)
-        
+        //TODO: always dispatch to main queue
     }
 }
