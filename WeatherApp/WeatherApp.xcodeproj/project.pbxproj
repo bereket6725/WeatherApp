@@ -161,7 +161,6 @@
 			children = (
 				E31276741E0F05BB0077E52D /* WeatherObject.swift */,
 				E37CBCFF1E170FE60081EE83 /* APIManagers */,
-				E37CBD021E17101A0081EE83 /* Parsers */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -208,13 +207,6 @@
 				8DD6EDC81E2600CA0036398C /* APIManager.swift */,
 			);
 			name = APIManagers;
-			sourceTree = "<group>";
-		};
-		E37CBD021E17101A0081EE83 /* Parsers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Parsers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

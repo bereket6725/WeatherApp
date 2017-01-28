@@ -13,20 +13,19 @@ typealias CatFact = String
 extension CatFact: Parsable {
     typealias JSONStandard = [String:AnyObject]
     static func parseJSON(data: Data) -> [String] {
-        let parsedArray: [String] = []
         do {
             let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as! JSONStandard
-            guard json["facts"] != nil else {
+            guard let parsedArray = json["facts"] else {
                 print("issues getting JSON from cat data")
-                return parsedArray
+                return []
             }
-            if let parsedArray = json["facts"] as? NSArray {
-                return parsedArray as! [String]
+            if let parsedArray = parsedArray as? [String] {
+                return parsedArray
             }
         } catch {
             print("\(error.localizedDescription)")
         }
-        return parsedArray
+        return []
     }
 
 }

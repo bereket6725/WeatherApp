@@ -23,21 +23,33 @@ class TableViewController: UIViewController, UITableViewDelegate {
         view.addSubview(tableView)
         dataSource = TableDataSource()
         tableView.dataSource = dataSource
+        let myRefreshControl = UIRefreshControl()
+        myRefreshControl.backgroundColor = UIColor.gray
+        myRefreshControl.tintColor = UIColor.white
+        myRefreshControl.addTarget(self, action: #selector(TableViewController.makeNetworkRequests), for: .valueChanged)
+        self.tableView.refreshControl = myRefreshControl
+
         makeNetworkRequests()
     }
 
     //calls the API's and assigns returned values to corresponding properties on the data source
     func makeNetworkRequests() {
-        callCatFactsAPI() { catFactsArray in
+        callCatFactsAPI { catFactsArray in
             self.dataSource.catFactsArray = catFactsArray
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+                print("data was called")
+
             }
         }
-        callWeatherAPI() { parsedArray in
+        callWeatherAPI { parsedArray in
             self.dataSource.weatherArray = parsedArray
             self.tableView.reloadData()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+                print("data was called")
 
+            }
         }
     }
 

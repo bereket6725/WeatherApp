@@ -42,11 +42,11 @@ class TableDataSource: NSObject, UITableViewDataSource {
         cell.minLabel.text = "min: \(weather.min)"
         cell.maxLabel.text = "max: \(weather.max)"
         cell.dateLabel.text = formattedDate
-        cell.morningLabel.text = "\(weather.morn)"
-        cell.dayLabel.text = "\(weather.day)"
+        cell.morningLabel.text = "morn: \(weather.morn)"
+        cell.dayLabel.text = "day: \(weather.day)"
         cell.humidityLabel.text = "\(weather.humidity)"
         cell.mainLabel.text = weather.main
-        cell.nightLabel.text = "\(weather.night)"
+        cell.nightLabel.text = "night: \(weather.night)"
         cell.speedLabel.text = "\(weather.speed)"
 
         // network requests will return at undetermined times, so here we are only filling in the TextView when we know have cat facts
