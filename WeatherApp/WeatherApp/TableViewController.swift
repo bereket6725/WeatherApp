@@ -23,6 +23,7 @@ class TableViewController: UIViewController, UITableViewDelegate {
         view.addSubview(tableView)
         dataSource = TableDataSource()
         tableView.dataSource = dataSource
+        //sets up the pull to refresh
         let myRefreshControl = UIRefreshControl()
         myRefreshControl.backgroundColor = UIColor.gray
         myRefreshControl.tintColor = UIColor.white
@@ -74,7 +75,7 @@ class TableViewController: UIViewController, UITableViewDelegate {
             self.present(alertController, animated: true, completion: nil)
         }
     }
-
+    //calls the openWeatherMaps API
     func callWeatherAPI(completion:@escaping ([WeatherObject]) -> Void) {
         APIManager.makeAPICall(urlString: Constants.openWeatherMapsAPI.url, completion: { results in
             DispatchQueue.main.async {
@@ -83,9 +84,8 @@ class TableViewController: UIViewController, UITableViewDelegate {
         })
 
     }
-
+    //calls the catFacts API
     func callCatFactsAPI(completion: @escaping ([String]) -> Void) {
         APIManager.makeAPICall(urlString: Constants.CatFactsAPI.url, completion: completion)
-        //TODO: always dispatch to main queue
     }
 }
