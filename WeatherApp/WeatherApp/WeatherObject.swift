@@ -25,19 +25,16 @@ struct WeatherObject: Parsable {
 
     typealias JSONStandard = [String:AnyObject]
     static func parseJSON(data: Data) -> [WeatherObject] {
-
         guard let json = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers) as! JSONStandard else {
             print("Could not parse JSON")
             return []
         }
-
         guard let forecasts = json["list"] as? [[String : AnyObject]] else {
             print("Unexpected JSON format")
             return []
         }
-
         var results: [WeatherObject] = []
-
+        //creates our weather object
         for forecast in forecasts {
             if let speed = forecast["speed"] as? Float,
                 let humidity = forecast["humidity"] as? Float,

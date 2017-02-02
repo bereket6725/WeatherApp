@@ -13,7 +13,7 @@ class TableViewController: UIViewController, UITableViewDelegate {
 
     var tableView: UITableView!
     var dataSource: TableDataSource!
-
+    var counter = 2//used to keep track of completed API requests
     //sets up tableView and calls the function to make the network request
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +28,6 @@ class TableViewController: UIViewController, UITableViewDelegate {
         myRefreshControl.tintColor = UIColor.white
         myRefreshControl.addTarget(self, action: #selector(TableViewController.makeNetworkRequests), for: .valueChanged)
         self.tableView.refreshControl = myRefreshControl
-
         makeNetworkRequests()
     }
 
@@ -36,20 +35,33 @@ class TableViewController: UIViewController, UITableViewDelegate {
     func makeNetworkRequests() {
         callCatFactsAPI { catFactsArray in
             self.dataSource.catFactsArray = catFactsArray
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-                print("data was called")
-
-            }
+            self.stopRefreshing()
         }
         callWeatherAPI { parsedArray in
             self.dataSource.weatherArray = parsedArray
-            self.tableView.reloadData()
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-                print("data was called")
+            print("made API call")
+            self.stopRefreshing()
+        }
+    }
+    //function gets called twice by both API requests and decrements our counter
+    //when our counter hits zero we know that both API calls have returned and we can refresh the tableView and end the refresh animation
+    func stopRefreshing(){
+        let decrementCounter = {
+            self.counter -= 1
+        }
+        decrementCounter()
+        if self.counter == 0 {
+            self.counter = 2
+            reloadTableData()
+        }
 
-            }
+    }
+    //reloads tableView and ends refreshing
+    func reloadTableData(){
+        DispatchQueue.main.async {
+            self.tableView.refreshControl?.endRefreshing()
+            self.tableView.reloadData()
+            //self.tableView.refreshControl?.endRefreshing()
         }
     }
 
